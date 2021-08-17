@@ -1,0 +1,34 @@
+From 2389bb79cc7a092abd67091a9417c1a09ad8eeb8 Mon Sep 17 00:00:00 2001
+From: Mark Harfouche <mark.harfouche@gmail.com>
+Date: Sun, 15 Aug 2021 20:49:43 -0400
+Subject: [PATCH 3/4] Avoid warning about unsigned char -> char conversion
+
+---
+ resample.c | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+
+diff --git a/resample.c b/resample.c
+index d1eaf9d..948f82e 100755
+--- a/resample.c
++++ b/resample.c
+@@ -1478,7 +1478,7 @@ void MyTransForm( TrformStr *TrPtr, fDesc *fD, int color, int imageNum)
+                     }
+                     else
+                     {
+-                        char*   ptr = &(dest[ coeff ]);
++                        unsigned char*   ptr = &(dest[ coeff ]);
+                     
+                         if(color < 4) // R or G or B
+                         {
+@@ -2462,7 +2462,7 @@ void transForm_aa( TrformStr *TrPtr, fDesc *fD,fDesc *finvD, int color, int imag
+                     }
+                     else
+                     {
+-                        char*   ptr = &(dest[ coeff ]);
++                        unsigned char*   ptr = &(dest[ coeff ]);
+                     
+                         if(color < 4) // R or G or B
+                         {
+-- 
+2.30.2
+

@@ -1,0 +1,47 @@
+From 24044b19352eae2a44da092c8e6da2eb43e5eb89 Mon Sep 17 00:00:00 2001
+From: Mark Harfouche <mark.harfouche@gmail.com>
+Date: Sun, 15 Aug 2021 21:19:15 -0400
+Subject: [PATCH 5/5] Deifne c2pstr for mac aarch64 as well
+
+---
+ filter.h  | 5 -----
+ sys_mac.h | 5 -----
+ 2 files changed, 10 deletions(-)
+
+diff --git a/filter.h b/filter.h
+index 886e03e..457aee9 100644
+--- a/filter.h
++++ b/filter.h
+@@ -1087,13 +1087,8 @@ extern sPrefs			*gsPrPtr;
+ 	#define		append_bin			"ab"
+     
+     // Ippei hack. OSX with GCC+ANSI mode.
+-    #ifdef MAC_OS_X_VERSION_10_4
+-        // MacOSX 10.4 has those functions predefined in Carbon API.
+-        #include <Carbon/Carbon.h> // CoreServices/TextUtils.h
+-    #else
+         #define		p2cstr( x )	
+         #define		c2pstr( x )
+-    #endif
+ 
+ #endif
+ 
+diff --git a/sys_mac.h b/sys_mac.h
+index 0c0dddb..4423093 100644
+--- a/sys_mac.h
++++ b/sys_mac.h
+@@ -51,11 +51,6 @@
+ #include <Fonts.h>
+ */			// till here
+ 
+-#ifndef MAC_OS_X_VERSION_10_4
+-#define c2pstr(x)  MyCtoPStr(x) // added by Kekus Digital
+-#endif
+-
+-
+ 
+ #define		SetLbl( kRes, string)												\
+ 			sprintf(numString,  "%s", string);									\
+-- 
+2.30.2
+
