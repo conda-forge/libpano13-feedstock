@@ -13,7 +13,7 @@ source:
     - patches/0002-Fixup-uint32-uint32_t.patch
     - patches/0003-Avoid-warning-about-unsigned-char-char-conversion.patch
     - patches/0004-Avoid-uint16-warnings-by-using-uint16_t.patch
-    - patches/0005-Deifne-c2pstr-for-mac-aarch64-as-well.patch
+    - patches/0005-Deifne-c2pstr-for-mac-aarch64-as-well.patch  # [osx and arm64]
 
 build:
   number: 2
