@@ -16,7 +16,7 @@ source:
     - patches/0005-Deifne-c2pstr-for-mac-aarch64-as-well.patch  # [osx and arm64]
 
 build:
-  number: 3
+  number: 4
   run_exports:
     - {{ pin_subpackage('libpano13', max_pin='x.x.x') }}
 
