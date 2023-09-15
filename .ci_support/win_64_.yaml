@@ -11,7 +11,7 @@ libjpeg_turbo:
 libpng:
 - '1.6'
 libtiff:
-- '4.5'
+- '4.6'
 perl:
 - 5.32.1
 target_platform:
